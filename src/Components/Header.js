@@ -2,9 +2,13 @@ import React from 'react'
 
 function Header() {
 	return (
-		<div>
-			This is the header
-		</div>
+		<header className="header">
+			<div className="nav">
+				<span className="nav-toggle">
+					
+				</span>
+			</div>
+		</header>
 	)
 }
 
