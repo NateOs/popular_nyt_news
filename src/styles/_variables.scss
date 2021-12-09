@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&family=Work+Sans:wght@300;400;700&display=swap');
+
+//colors - primary
+$primary-turqoise: #1cc8a0;
+$primary-yellow-accent: #e2b603;
+
+//colors - neutral
+$neutral-gray: #a0a0a0;
+
+// fonts & bg
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+$light-gray: hsla(0, 0%, 100%, 0.75);
+
+$font-weights: (
+	'light': 300,
+	'regular': 400,
+	'semi-bold': 500,
+	'bold': 700,
+	'extra-bold': 800,
+);
+
+// font-family
+$font-family-Work: 'Work Sans', sans-serif;
