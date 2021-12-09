@@ -1,0 +1,28 @@
+.news-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border: solid 1px red;
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  &__image {
+    height: clamp(3rem, 1.5vw, 5rem);
+    aspect-ratio: 1;
+	margin:0 .5em;
+    border-radius: 50%;
+  }
+  &__title {
+	font-size: clamp(.7rem, 1.1vw, 2rem);
+	margin: 0 1em;
+  }
+
+  @media (min-width: 40rem) {
+    .grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
