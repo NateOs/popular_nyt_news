@@ -1,0 +1,20 @@
+.header {
+  width: 100%;
+  .icon {
+	//   TODO style svgs 
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+  }
+  .toggles {
+	  width: 10%;
+	  display: flex;
+	  justify-content: space-between;
+  }
+  border: 1px solid #000;
+}
