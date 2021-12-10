@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NewsListItem from "../Components/NewsListItem";
+import Spinner from "../Components/Spinner";
 
 function Home() {
   // number of articles: last 7 or 30 days
@@ -20,7 +21,6 @@ function Home() {
     axios
       .get(`${baseUrl + process.env.REACT_APP_NYTIMES_KEY}`)
       .then((response) => {
-        console.log(response.data.results);
         setState({
           ...state,
           news: response.data.results,
@@ -34,9 +34,13 @@ function Home() {
 
   return (
     <div className="home">
-      <NewsListItem /> <NewsListItem /> <NewsListItem /> <NewsListItem />{" "}
-      <NewsListItem /> <NewsListItem /> <NewsListItem /> <NewsListItem />{" "}
-      <NewsListItem /> <NewsListItem /> <NewsListItem />{" "}
+      {state.isLoading ? (
+        <Spinner />
+      ) : (
+        state?.news?.map((newsItem) => (
+          <NewsListItem key={newsItem.id} {...newsItem} />
+        ))
+      )}
     </div>
   );
 }

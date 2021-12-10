@@ -1,14 +1,13 @@
 .home {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  align-content: start;
+  justify-content: center;
+  margin: 2em auto;
   gap: 1rem;
-  align-items: start;
-  border: solid yellow 1px;
-  margin-top: 1rem;
 
   @media (max-width: 40rem) {
     display: flex;
     flex-direction: column;
-    background-color: #f5f5f5;
   }
 }
