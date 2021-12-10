@@ -1,0 +1,14 @@
+.home {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: 1rem;
+  align-items: start;
+  border: solid yellow 1px;
+  margin-top: 1rem;
+
+  @media (max-width: 40rem) {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+  }
+}
