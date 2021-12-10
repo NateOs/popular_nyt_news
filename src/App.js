@@ -1,9 +1,8 @@
-import logo from "./logo.svg";
 import "./styles/global.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./Components/Header";
-import NewsListItem from "./Components/NewsListItem";
+import Details from "./Pages/Details";
 import Home from "./Pages/Home";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />}>
-            <Route path="/article/:id" element={<NewsListItem />} />
+            <Route path="/article/:id" element={<Details />} />
           </Route>
         </Routes>
       </div>
