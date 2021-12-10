@@ -17,12 +17,6 @@ function App() {
           </Route>
         </Routes>
       </div>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />}>
-          <Route path="/article/:id" element={<NewsListItem />} />
-        </Route>
-      </Routes>
     </BrowserRouter>
   );
 }
