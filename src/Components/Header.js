@@ -3,7 +3,7 @@ import { MdCalendarViewDay, MdSearch, MdNotes } from "react-icons/md";
 
 function Header() {
   return (
-    <header className="header container">
+    <header className="header">
       <div className="nav">
         <span className="nav-toggle icon">
           <MdCalendarViewDay />
