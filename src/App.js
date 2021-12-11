@@ -8,12 +8,11 @@ import Home from "./Pages/Home";
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <div className="container">
-        <Header />
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route path="/article/:id" element={<Details />} />
-          </Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/details/:slug" element={<Details />} />
         </Routes>
       </div>
     </BrowserRouter>
