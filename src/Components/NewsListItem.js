@@ -1,30 +1,29 @@
 import React from "react";
 import { MdCalendarToday } from "react-icons/md";
 import { Link } from "react-router-dom";
-// TODO fix image link
 function NewsListItem({
   id,
   title,
-  media,
+  media: images,
   published_date: date,
   byline: authors,
   title: headline,
 }) {
-  // let imageUrl = media[0]["media-metadata"][0].url;
-  // console.log("imageUrl", imageUrl);
-
   return (
     <Link to={`/details/${headline}`}>
       <div className="news-item container">
-        {/* {media ? (
-          <img className="news-item__image" src={imageUrl} />
+        {images.length > 0 ? (
+          <img
+            className="news-item__image"
+            src={images[0]["media-metadata"][0]["url"]}
+          />
         ) : (
           <p>no media</p>
-        )} */}
+        )}
 
         <div className="news-item__title">
           <h2>{title}</h2>
-          <span className="news-item__author">{authors}</span>
+          <p className="news-item__author">{authors}</p>
           <span className="icon">
             <MdCalendarToday /> {date}
           </span>
