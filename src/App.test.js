@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import Header from "./Components/Header";
+import NewsListItem from "./Components/NewsListItem";
+import Details from "./Pages/Details";
+import Home from "./Pages/Home";
 
-test('renders learn react link', () => {
+
+it('renders welcome message', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText('new york')).toBeInTheDocument();
 });
