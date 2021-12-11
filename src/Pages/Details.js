@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
+import Spinner from "../Components/Spinner";
+
 function Details() {
   const { slug } = useParams();
   const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=headline:(${slug})&api-key=${process.env.REACT_APP_NYTIMES_KEY}`;
@@ -20,25 +22,46 @@ function Details() {
         console.log(response);
         setState({
           ...state,
-          response: response.data.response,
+          response: response.data.response.docs[0],
           isLoading: false,
         });
       })
       .catch((error) => {
-        alert(error);
+        console.log(error);
         setState({ ...state, isLoading: false, isError: true });
       });
-  }, [slug]);
+  }, []);
 
+  const {
+    snippet,
+    headline: { main } = {},
+    web_url,
+    pub_date,
+    multimedia,
+    byline: { original } = {},
+  } = state?.response;
+
+  console.log(main);
   return (
     <div className="details">
-      <h1 className="details__title">Details of News</h1>
-      <p className="details__authors">By Author 1, 2 , 3</p>
-      <p className="details__date">Date: 1/1/2020</p>
-      <p className="details__content">
-        Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
-      <Link to="/">Go back</Link>
+      {state.isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <h1 className="details__title">{main}</h1>
+          <p className="details__authors">{original}</p>
+          <p className="details__date">
+            {new Date(`${pub_date}`).toLocaleDateString()}
+          </p>
+          <p className="details__content">{snippet}</p>
+          <a href={web_url} className="details__read">
+            Read more
+          </a>
+          <div>
+            <Link to="/">Go back</Link>
+          </div>
+        </>
+      )}
     </div>
   );
 }
