@@ -1,4 +1,8 @@
 .header {
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
   width: 100%;
   .icon {
     //   TODO style svgs
@@ -13,11 +17,14 @@
     color: white;
   }
   h1 {
-    font-size: clamp(1rem, 1.5vw, 2rem);
+    font-size: clamp(1.2rem, 1.5vw, 2.5rem);
   }
   .toggles {
     width: 10%;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+  }
+  .toggles:first-child {
+    margin-left: -3rem;
   }
 }
