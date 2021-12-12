@@ -6,4 +6,4 @@
 - run npm run start
 - done
 
-# Also available here: [NYT NEWS APP](https://https://sleepy-mcclintock-1a0f14.netlify.app/)
+# Also available here: [NYT NEWS APP](https://sleepy-mcclintock-1a0f14.netlify.app/)
